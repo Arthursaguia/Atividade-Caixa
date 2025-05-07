@@ -12,7 +12,6 @@
         <p>Bem-vindo ao caixa rápido!</p>
     </div>
 
-
     <div class="container mt-4 caixa-box">
         <h2 class="text-center mb-4">Registrar Produtos</h2>
         <form method="POST" action="processar_pedido.php">
@@ -21,8 +20,16 @@
                 <input type="text" name="cliente" id="cliente" class="form-control" required>
             </div>
             <div class="mb-3">
+                <label for="nome_pedido2" class="form-label">Nome do Produto 1 :</label>
+                <input type="text" name="nome_pedido" id="nome_pedido" class="form-control" required>
+            </div>
+            <div class="mb-3">
                 <label for="produto1" class="form-label">Preço do Produto 1 (R$):</label>
                 <input type="number" step="0.01" name="produto1" id="produto1" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="nome_pedido2" class="form-label">Nome do Produto 2 :</label>
+                <input type="text" name="nome_pedido" id="nome_pedido" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="produto2" class="form-label">Preço do Produto 2 (R$):</label>

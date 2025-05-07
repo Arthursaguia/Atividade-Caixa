@@ -17,23 +17,25 @@
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            // Receber nome do cliente
+            // Receber os dados do formulário
             $cliente = isset($_POST['cliente']) ? htmlspecialchars($_POST['cliente']) : 'Cliente Desconhecido';
-            
+            $nome_pedido1 = isset($_POST['nome_pedido1']) ? htmlspecialchars($_POST['nome_pedido1']) : 'Produto sem nome';
+            $nome_pedido2 = isset($_POST['nome_pedido2']) ? htmlspecialchars($_POST['nome_pedido2']) : 'Produto sem nome';
             $produto1 = isset($_POST['produto1']) ? floatval($_POST['produto1']) : 0;
             $produto2 = isset($_POST['produto2']) ? floatval($_POST['produto2']) : 0;
             $valor_pago = isset($_POST['valor_pago']) ? floatval($_POST['valor_pago']) : 0;
 
-            // Calculando total e troco
+            
             $total = $produto1 + $produto2;
             $troco = $valor_pago - $total;
 
-            // Exibir detalhes
             echo "<p><strong>Cliente:</strong> " . $cliente . "</p>";
+            echo "<p><strong>Produto 1:</strong> " . $nome_pedido1 . "</p>";
+            echo "<p><strong>Produto 1:</strong> " . $nome_pedido1 . "</p>";
             echo "<p><strong>Total da compra:</strong> R$ " . number_format($total, 2, ',', '.') . "</p>";
             echo "<p><strong>Valor pago:</strong> R$ " . number_format($valor_pago, 2, ',', '.') . "</p>";
 
-            // Mostrar troco ou valor insuficiente
+         
             if ($troco < 0) {
                 echo "<p class='text-danger'><strong>Valor insuficiente:</strong> Faltam R$ " . number_format(abs($troco), 2, ',', '.') . "</p>";
             } else {
@@ -44,7 +46,6 @@
         }
         ?>
 
-        
         <a href="index.html" class="btn btn-warning w-100 mt-3">Nova Compra</a>
     </div>
 </body>
